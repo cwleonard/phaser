@@ -301,6 +301,12 @@ Phaser.Sound = function (game, key, volume, loop, connect) {
     this._tempVolume = 0;
 
     /**
+    * @property {number} _tempPause - Internal marker var.
+    * @private
+    */
+    this._tempPause = 0;
+
+    /**
     * @property {number} _muteVolume - Internal cache var.
     * @private
     */
@@ -437,6 +443,9 @@ Phaser.Sound.prototype = {
                         //  won't work with markers, needs to reset the position
                         this.onLoop.dispatch(this);
 
+                        //  Gets reset by the play function
+                        this.isPlaying = false;
+
                         if (this.currentMarker === '')
                         {
                             this.currentTime = 0;
@@ -462,6 +471,16 @@ Phaser.Sound.prototype = {
                     if (this.loop)
                     {
                         this.onLoop.dispatch(this);
+
+                        if (this.currentMarker === '')
+                        {
+                            this.currentTime = 0;
+                            this.startTime = this.game.time.time;
+                        }
+
+                        //  Gets reset by the play function
+                        this.isPlaying = false;
+
                         this.play(this.currentMarker, 0, this.volume, true, true);
                     }
                     else
@@ -708,6 +727,7 @@ Phaser.Sound.prototype = {
                     this.startTime = this.game.time.time;
                     this.currentTime = 0;
                     this.stopTime = this.startTime + this.durationMS;
+
                     this.onPlay.dispatch(this);
                 }
                 else
@@ -753,6 +773,7 @@ Phaser.Sound.prototype = {
             this.paused = true;
             this.pausedPosition = this.currentTime;
             this.pausedTime = this.game.time.time;
+            this._tempPause = this._sound.currentTime;
             this.onPause.dispatch(this);
             this.stop();
         }
@@ -823,6 +844,7 @@ Phaser.Sound.prototype = {
             }
             else
             {
+                this._sound.currentTime = this._tempPause;
                 this._sound.play();
             }
 

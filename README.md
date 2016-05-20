@@ -13,8 +13,8 @@ Thousands of developers worldwide use it. From indies and multi-national digital
 * **Visit:** The [Phaser website](http://phaser.io) and follow on [Twitter](https://twitter.com/photonstorm) (#phaserjs)
 * **Learn:** [API Documentation](http://phaser.io/docs), [Support Forum][forum] and [StackOverflow](http://stackoverflow.com/questions/tagged/phaser-framework)
 * **Code:** 700+ [Source Examples](http://phaser.io/examples) (also available in this [git repo][examples])
-* **Read:** Subscribe to the weekly [Phaser World Newsletter](http://phaser.io/community/newsletter)
-* **Chat:** [#phaserio IRC channel](http://www.html5gamedevs.com/topic/4470-official-phaserio-irc-channel-phaserio-on-freenode/) or our [Slack Channel](http://phaser.io/news/2015/08/phaser-slack-channel)
+* **Read:** Subscribe to the weekly [Phaser World Newsletter](#phaserworld)
+* **Chat:** Join our [Slack Channel](http://phaser.io/news/2015/08/phaser-slack-channel), or [#phaserio IRC channel](http://www.html5gamedevs.com/topic/4470-official-phaserio-irc-channel-phaserio-on-freenode/)
 * **Extend:** With [Phaser Plugins](http://phaser.io/shop/plugins)
 * **Be awesome:** Support the future of Phaser on [Patreon](https://www.patreon.com/photonstorm) or by buying our [books](http://phaser.io/shop/books)
 
@@ -32,20 +32,21 @@ Thousands of developers worldwide use it. From indies and multi-national digital
 - [Requirements](#requirements)
 - [Road Map](#road-map)
 - [Change Log](#change-log)
+- [Lazer](#lazer)
 - [Contributing](#contributing)
 
 ![div](http://www.phaser.io/images/github/div.png)
 
 <a name="whats-new"></a>
-## What's new in Phaser 2.4.8
+## What's new in Phaser 2.5.0
 
 <div align="center"><img src="http://phaser.io/images/github/news.jpg"></div>
 
-> 22nd April 2016
+> In Development
 
-Phaser 2.4.8 is now in development. This file will be updated as work progresses.
+The release of Phaser 2.5.0 is currently in development. This README will be updated as development continues.
 
-As always, keep you eyes on the Phaser web site, our weekly newsletter, or follow me on [Twitter](https://twitter.com/photonstorm) for the latest updates.
+As always, keep you eyes on the Phaser web site and read our weekly [newsletter](#phaserworld). You can also follow me on [Twitter](https://twitter.com/photonstorm) or chat to me in the Phaser [Slack](http://phaser.io/news/2015/08/phaser-slack-channel) channel.
 
 We'd be extremely grateful if you could get involved with our [Phaser Patreon campaign](https://www.patreon.com/photonstorm). The uptake so far has been fantastic. Thank you to everyone who now supports Phaser development and shares our belief in the future of HTML5 gaming, and Phasers role in that.
 
@@ -77,10 +78,6 @@ QICI Engine: [A powerful one-stop integrated Phaser game editor](http://www.qici
 ![zenva](http://www.phaser.io/images/sponsors/zenva-100.png)
 
 Zenva Academy: [Online courses on Phaser, HTML5 and native app development](https://academy.zenva.com/?zva_src=phaserpatreon)
-
-![abra](http://www.phaser.io/images/sponsors/abra-100.png)
-
-Abra: [Complete browser based game development](https://aurifexlabs.com/)
 
 ![div](http://www.phaser.io/images/github/div.png)
 
@@ -119,15 +116,15 @@ Using Browserify? Please [read this](#browserify).
 
 [jsDelivr](http://www.jsdelivr.com/#!phaser) is a "super-fast CDN for developers". Include the following in your html:
 
-`<script src="//cdn.jsdelivr.net/phaser/2.4.8/phaser.js"></script>`
+`<script src="//cdn.jsdelivr.net/phaser/2.5.0/phaser.js"></script>`
 
 or the minified version:
 
-`<script src="//cdn.jsdelivr.net/phaser/2.4.8/phaser.min.js"></script>`
+`<script src="//cdn.jsdelivr.net/phaser/2.5.0/phaser.min.js"></script>`
 
 [cdnjs.com](https://cdnjs.com/libraries/phaser) also offers a free CDN service. They have all versions of Phaser and even the custom builds:
 
-`<script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/2.4.8/phaser.js"></script>`
+`<script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/2.5.0/phaser.js"></script>`
 
 ### Phaser Sandbox
 
@@ -166,7 +163,7 @@ Browse the [Phaser Examples](http://phaser.io/examples) or clone the [examples r
 
 <div align="center"><img src="http://phaser.io/content/interphase/1/images/editorial/pages.jpg"></div>
 
-[Interphase](http://phaser.io/interphase) is a new book for Phaser developers of all skill levels.
+[Interphase](http://phaser.io/interphase) is a programming book for Phaser developers of all skill levels.
 
 With 400 pages of content you'll find detailed articles, game development "Making Of" guides and tutorials. All were written using the latest version of Phaser, so you won't be learning any out-dated tricks here.
 
@@ -319,23 +316,23 @@ If you code with [TypeScript](http://www.typescriptlang.org/) there are comprehe
 <a name="road-map"></a>
 ## Road Map
 
-The majority of Phaser development is now taking place on the Lazer (Phaser 3) project. The Phaser 2 branch will still be supported and issues fixed, but roadmap features have been migrated over.
+The majority of Phaser development is now taking place on the [Lazer](https://github.com/photonstorm/lazer) (Phaser 3) project. The Phaser 2 branch will still be supported and issues fixed, but roadmap features have been migrated over.
 
-<a name="phaser3"></a>
-## Lazer (Phaser 3)
+<a name="lazer"></a>
+## Lazer
 
-Lazer is the new name for Phaser 3.
+[Lazer](https://github.com/photonstorm/lazer) is the next generation of the Phaser game framework, and was previously called Phaser 3. Using a completely ES6 base it is renderer agnostic, allowing for DOM, SVG, Canvas and WebGL rendering, across desktop and mobile web browsers.
 
-Lazer is the next generation of the Phaser game framework. Using a completely ES6 base it is renderer agnostic, allowing for DOM, SVG, Canvas and WebGL rendering, across desktop and mobile web browsers.
+**Lazer is in active development but is not yet ready for production use.**
 
-You can read all about the philosophy behind Lazer [here](http://phaser.io/news/2016/01/phaser-in-2015-and-beyond) or join the Google Groups [mailing list](https://groups.google.com/d/forum/phaser3-dev) where progress reports are posted on a regular basis.
+You can read all about the philosophy behind Lazer [here](http://phaser.io/news/2016/01/phaser-in-2015-and-beyond) or join the Google Group [mailing list](https://groups.google.com/d/forum/phaser3-dev) where progress reports are posted. You can also follow progress in the Phaser World newsletter.
 
 ![div](http://www.phaser.io/images/github/div.png)
 
 <a name="change-log"></a>
 ## Change Log
 
-## Version 2.4.8 - "Watch Hill" - in dev
+## Version 2.5.0 - "Shadow Coast" - In Development
 
 ### New Features
 
@@ -345,14 +342,15 @@ You can read all about the philosophy behind Lazer [here](http://phaser.io/news/
 
 ### Updates
 
-* TypeScript definitions fixes and updates (thanks @osev7 @staff0rd)
-* Docs typo fixes (thanks @dedoubleyou1)
-* You can now access the intensity of the Camera shake effect via the getter / setter `Camera.shakeIntensity`. Useful if you wish to tween the intensity while running. (thanks @drhayes #2443)
-* The Arcade Physics overlap method would return false if two bodies were overlapping but neither had any velocity (i.e. they were embedded into each other)
+* TypeScript definitions fixes and updates (thanks )
+* Docs typo fixes (thanks )
+*
+*
+*
 
 ### Bug Fixes
 
-* Fixed an issue in the Arcade Physics overlap method where it would only detect overlaps up to the max bias threshold and no further (thanks @rgk #2441)
+*
 *
 *
 
@@ -401,10 +399,10 @@ All rights reserved.
 
 [![Analytics](https://ga-beacon.appspot.com/UA-44006568-2/phaser/index)](https://github.com/igrigorik/ga-beacon)
 
-[get-js]: https://github.com/photonstorm/phaser/releases/download/v2.4.8/phaser.js
-[get-minjs]: https://github.com/photonstorm/phaser/releases/download/v2.4.8/phaser.min.js
-[get-zip]: https://github.com/photonstorm/phaser/archive/v2.4.8.zip
-[get-tgz]: https://github.com/photonstorm/phaser/archive/v2.4.8.tar.gz
+[get-js]: https://github.com/photonstorm/phaser/releases/download/v2.5.0/phaser.js
+[get-minjs]: https://github.com/photonstorm/phaser/releases/download/v2.5.0/phaser.min.js
+[get-zip]: https://github.com/photonstorm/phaser/archive/v2.5.0.zip
+[get-tgz]: https://github.com/photonstorm/phaser/archive/v2.5.0.tar.gz
 [clone-http]: https://github.com/photonstorm/phaser.git
 [clone-ssh]: git@github.com:photonstorm/phaser.git
 [clone-svn]: https://github.com/photonstorm/phaser
@@ -413,7 +411,7 @@ All rights reserved.
 [phaser]: https://github.com/photonstorm/phaser
 [issues]: https://github.com/photonstorm/phaser/issues
 [examples]: https://github.com/photonstorm/phaser-examples
-[contribute]: https://github.com/photonstorm/phaser/blob/master/CONTRIBUTING.md
+[contribute]: https://github.com/photonstorm/phaser/blob/master/.github/CONTRIBUTING.md
 [forum]: http://www.html5gamedevs.com/forum/14-phaser/
 
 [game1]: https://www.prodigygame.com/Fun-Math-Games/

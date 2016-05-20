@@ -122,7 +122,7 @@ Phaser.Game = function (width, height, renderer, parent, state, transparent, ant
     this.renderer = null;
 
     /**
-    * @property {number} renderType - The Renderer this game will use. Either Phaser.AUTO, Phaser.CANVAS or Phaser.WEBGL.
+    * @property {number} renderType - The Renderer this game will use. Either Phaser.AUTO, Phaser.CANVAS, Phaser.WEBGL, or Phaser.HEADLESS.
     * @readonly
     */
     this.renderType = Phaser.AUTO;
@@ -950,11 +950,14 @@ Phaser.Game.prototype = {
 
         this.state.preRender(elapsedTime);
 
-        this.renderer.render(this.stage);
+        if (this.renderType !== Phaser.HEADLESS)
+        {
+            this.renderer.render(this.stage);
 
-        this.plugins.render(elapsedTime);
+            this.plugins.render(elapsedTime);
 
-        this.state.render(elapsedTime);
+            this.state.render(elapsedTime);
+        }
 
         this.plugins.postRender(elapsedTime);
 
@@ -1002,6 +1005,11 @@ Phaser.Game.prototype = {
     /**
     * Nukes the entire game from orbit.
     *
+    * Calls destroy on Game.state, Game.sound, Game.scale, Game.stage, Game.input, Game.physics and Game.plugins.
+    *
+    * Then sets all of those local handlers to null, destroys the renderer, removes the canvas from the DOM
+    * and resets the PIXI default renderer.
+    *
     * @method Phaser.Game#destroy
     */
     destroy: function () {
@@ -1034,6 +1042,8 @@ Phaser.Game.prototype = {
         this.renderer.destroy(false);
 
         Phaser.Canvas.removeFromDOM(this.canvas);
+
+        PIXI.defaultRenderer = null;
 
         Phaser.GAMES[this.id] = null;
 
